@@ -1,0 +1,10 @@
+Hello.c
+*.o
+*.xsc
+MYMETA.json
+MYMETA.yml
+Makefile
+blib
+pm_to_blib
+*.old
+*.a
