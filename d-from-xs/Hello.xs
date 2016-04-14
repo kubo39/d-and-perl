@@ -7,50 +7,13 @@
 
 MODULE = Hello          PACKAGE = Hello
 
-void hello(...)
+void
+d_fibonacci(...)
   PPCODE:
 {
-  char* str;
-  str = hello_from_d();
-  PerlIO_printf(PerlIO_stdout(), str);
-  XSRETURN(0);
-};
-
-
-void createCounterFromXS(...)
-  PPCODE:
-{
-  createCounter();
-  XSRETURN(0);
+  SV* item = ST(0);
+  IV input = SvIV(item);
+  int ret = fibonacci(input);
+  XPUSHs(sv_2mortal(newSViv(ret)));
+  XSRETURN(1);
 }
-
-
-void incrementFromXS(...)
-  PPCODE:
-{
-  increment();
-  XSRETURN(0);
-}
-
-
-SV* getCountFromXS(...)
-  CODE:
-    int ret = getCount();
-    RETVAL = newSVuv(ret);
-  OUTPUT:
-    RETVAL
-
-void initializeD(...)
-  PPCODE:
-{
-  rt_init();
-  XSRETURN(0);
-};
-
-
-void finalizeD(...)
-  PPCODE:
-{
-  rt_term();
-  XSRETURN(0);
-};

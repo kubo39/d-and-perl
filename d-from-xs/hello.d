@@ -1,56 +1,14 @@
-import core.runtime;
+extern(C):
+nothrow:
+@nogc:
+@system:
 
-
-__gshared Counter counter;
-
-
-extern(C)
+int fibonacci(int n)
 {
- char* hello_from_d()
- {
-   return cast(char*)"hello";
- }
-
- void createCounter()
- {
-   if (counter is null) {
-     counter = new Counter;
-   }
- }
-
- int getCount()
- {
-   if (counter is null) {
-     return -1;
-   }
-   return counter.current;
- }
-
- void increment()
- {
-   if (counter is null) {
-     return;
-   }
-   counter.countup;
- }
-}
-
-
-class Counter
-{
-  int value;
-  this()
-  {
-    value = 0;
+  if(n < 2) {
+    return n;
   }
-
-  void countup()
-  {
-    value++;
-  }
-
-  int current()
-  {
-    return value;
+  else {
+    return fibonacci(n-1) + fibonacci(n-2);
   }
 }

@@ -1,3 +1,3 @@
 #pragma once
 
-char* hello_from_d(void);
+int fibonacci(int n);
