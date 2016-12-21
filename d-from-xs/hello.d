@@ -3,12 +3,9 @@ nothrow:
 @nogc:
 @system:
 
-int fibonacci(int n)
+pragma(LDC_no_moduleinfo);
+
+int fibonacci(int n) pure
 {
-  if(n < 2) {
-    return n;
-  }
-  else {
-    return fibonacci(n-1) + fibonacci(n-2);
-  }
+    return n < 2 ? n : fibonacci(n-1) + fibonacci(n-2);
 }
