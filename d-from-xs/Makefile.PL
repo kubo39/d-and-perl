@@ -13,5 +13,5 @@ WriteMakefile(
     DEFINE            => '', # e.g., '-DHAVE_SOMETHING'
     INC               => '-I.', # e.g., '-I. -I/usr/include/other'
     # Un-comment this if you add C files to link with later:
-    OBJECT            => 'Hello.o dhello.o', # link all the C files too
+    OBJECT            => 'Hello.o dlangext.o', # link all the C files too
     );

@@ -3,12 +3,10 @@
 #include "perl.h"
 #include "XSUB.h"
 
-#include "hello.h"
-
 MODULE = Hello          PACKAGE = Hello
 
 void
-d_fibonacci(...)
+xs_fibonacci(...)
   PPCODE:
 {
   SV* item = ST(0);
