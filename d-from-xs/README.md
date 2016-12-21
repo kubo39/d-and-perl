@@ -1,13 +1,13 @@
 # D from XS
 
 ```
-% dmd -c -fPIC -ofdhello.o hello.d
-% perl Makefile.PL
-% make
+$ ldc2 -c -O -relocation-model=pic -ofdhello.o hello.d
+$ perl Makefile.PL
+$ make
 ```
 
 ## Try it.
 
 ```
-% perl hoge.pl
+$ perl hoge.pl
 ```
