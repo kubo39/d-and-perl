@@ -1,7 +1,7 @@
 use FFI::Raw;
 
 my $addOne = FFI::Raw->new(
-    './libsharedobj.so', 'addOne',
+    'libsharedobj.so', 'addOne',
     FFI::Raw::int,
     FFI::Raw::int
 );
