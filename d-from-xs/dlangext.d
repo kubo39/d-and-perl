@@ -3,6 +3,7 @@ nothrow:
 @nogc:
 @system:
 
+version(LDC)
 pragma(LDC_no_moduleinfo);
 
 int fibonacci(int n) pure
