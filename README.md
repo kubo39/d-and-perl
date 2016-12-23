@@ -157,10 +157,9 @@ import std.algorithm : fold, map;
 
 extern(C)
 {
-    void printSum(int start, int end)
+    int squareSum(int start, int end) pure
     {
-        import std.stdio;
-        start.iota(end).map!(a => a * a).fold!((a, b) => a + b).writeln;
+        return start.iota(end).map!(a => a * a).fold!((a, b) => a + b);
     }
 }
 ```
